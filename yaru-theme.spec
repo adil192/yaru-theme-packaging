@@ -6,7 +6,7 @@
 
 Name:           yaru-theme
 Version:        19.04.1
-Release:        2.%{date}git%{shortcommit}%{?dist}
+Release:        3.%{date}git%{shortcommit}%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
 License:        GPLv3+ and CC-BY-SA
@@ -140,6 +140,9 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %{_datadir}/sounds/Yaru
 
 %changelog
+* Sat Jul 27 2019 Fedora Release Engineering <releng@fedoraproject.org> - 19.04.1-3.20190425git0ddb244
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
 * Fri Apr 26 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.04.1-2.20190425git0ddb244
 - Adapt for Fedora
 
