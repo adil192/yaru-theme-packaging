@@ -1,25 +1,19 @@
-%global commit      0ddb24409a4a17b2752fcd24520764ef509bf6d6
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global date        20190425
-
-%global _license    COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
+%global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:           yaru-theme
-Version:        19.04.1
-Release:        3.%{date}git%{shortcommit}%{?dist}
+Version:        19.10.1
+Release:        1%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
 License:        GPLv3+ and CC-BY-SA
 URL:            https://community.ubuntu.com/c/desktop/theme-refresh
-Source0:        https://github.com/ubuntu/yaru/tarball/%{commit}#/%{name}-%{version}%{date}git%{shortcommit}.tar.gz
-
+Source0:        https://github.com/ubuntu/yaru/archive/%{version}/%{name}-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  fdupes
 BuildRequires:  meson >= 0.45
 BuildRequires:  sassc
 BuildRequires:  pkgconfig(appstream-glib)
-
 Requires:       gnome-shell-theme-yaru
 Requires:       yaru-gtk2-theme
 Requires:       yaru-gtk3-theme
@@ -33,6 +27,7 @@ the default theme starting from Ubuntu 18.10 Cosmic Cuttlefish.
 
 %description %{_description}
 
+
 %package     -n gnome-shell-theme-yaru
 Summary:        Yaru GNOME Shell Theme
 Recommends:     yaru-gtk3-theme
@@ -44,6 +39,7 @@ Suggests:       yaru-theme
 
 This package contains GNOME Shell Theme.
 
+
 %package     -n yaru-gtk2-theme
 Summary:        GTK+ 2 support for the Yaru GTK Theme
 Requires:       adwaita-gtk2-theme
@@ -54,6 +50,7 @@ Recommends:     yaru-gtk3-theme
 
 This package contains GTK+ 2 theme.
 
+
 %package     -n yaru-gtk3-theme
 Summary:        GTK+ 3 support for the Yaru GTK Theme
 Requires:       gtk3
@@ -62,6 +59,7 @@ Recommends:     yaru-gtk2-theme
 %description -n yaru-gtk3-theme %{_description}
 
 This package contains GTK+ 3 theme.
+
 
 %package     -n yaru-icon-theme
 Summary:        Yaru icon theme
@@ -76,6 +74,7 @@ Suggests:       yaru-sound-theme
 
 This package contains the icon theme.
 
+
 %package     -n yaru-sound-theme
 Summary:        Yaru sound theme
 License:        CC-BY-SA
@@ -84,8 +83,9 @@ License:        CC-BY-SA
 
 This package contains the sound theme following the XDG theming specification.
 
+
 %prep
-%autosetup -n ubuntu-yaru-%{shortcommit}
+%autosetup -n yaru-%{version}
 
 %build
 %meson
@@ -140,6 +140,9 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %{_datadir}/sounds/Yaru
 
 %changelog
+* Tue Sep 10 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.1-2
+- Update to 19.10.1
+
 * Sat Jul 27 2019 Fedora Release Engineering <releng@fedoraproject.org> - 19.04.1-3.20190425git0ddb244
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
