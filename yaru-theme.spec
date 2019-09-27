@@ -1,7 +1,7 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:           yaru-theme
-Version:        19.10.1
+Version:        19.10.3
 Release:        1%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
@@ -10,7 +10,6 @@ URL:            https://community.ubuntu.com/c/desktop/theme-refresh
 Source0:        https://github.com/ubuntu/yaru/archive/%{version}/%{name}-%{version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  fdupes
 BuildRequires:  meson >= 0.45
 BuildRequires:  sassc
 BuildRequires:  pkgconfig(appstream-glib)
@@ -87,9 +86,11 @@ This package contains the sound theme following the XDG theming specification.
 %prep
 %autosetup -n yaru-%{version}
 
+
 %build
 %meson
 %meson_build
+
 
 %install
 %meson_install
@@ -99,18 +100,17 @@ rm  %{buildroot}%{_datadir}/glib-2.0/schemas/99_Yaru.gschema.override \
     %{buildroot}%{_datadir}/wayland-sessions/Yaru-wayland.desktop \
     %{buildroot}%{_datadir}/gnome-shell/extensions/ubuntu-dock@ubuntu.com/yaru.css
 
-%fdupes -s %{buildroot}%{_datadir}/icons/Yaru/
-%fdupes -s %{buildroot}%{_datadir}/themes/Yaru/
-
 touch %{buildroot}%{_datadir}/icons/Yaru/icon-theme.cache
 
 %transfiletriggerin -- %{_datadir}/icons/Yaru
 gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 
+
 %files
 %license %{_license}
 %doc AUTHORS CONTRIBUTING.md README.md
 %{_datadir}/themes/Yaru-dark/index.theme
+%{_datadir}/themes/Yaru-light/index.theme
 %{_datadir}/themes/Yaru/index.theme
 
 %files -n gnome-shell-theme-yaru
@@ -121,12 +121,15 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %files -n yaru-gtk2-theme
 %license %{_license}
 %{_datadir}/themes/Yaru-dark/gtk-2.0
+%{_datadir}/themes/Yaru-light/gtk-2.0
 %{_datadir}/themes/Yaru/gtk-2.0
 
 %files -n yaru-gtk3-theme
 %license %{_license}
 %{_datadir}/themes/Yaru-dark/gtk-3.0
 %{_datadir}/themes/Yaru-dark/gtk-3.20
+%{_datadir}/themes/Yaru-light/gtk-3.0
+%{_datadir}/themes/Yaru-light/gtk-3.20
 %{_datadir}/themes/Yaru/gtk-3.0
 %{_datadir}/themes/Yaru/gtk-3.20
 
@@ -139,7 +142,13 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %license %{_license}
 %{_datadir}/sounds/Yaru
 
+
 %changelog
+* Fri Sep 27 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.3-1
+- Update to 19.10.3
+- Add new light variant
+- Drop fdupes
+
 * Tue Sep 10 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.1-2
 - Update to 19.10.1
 
