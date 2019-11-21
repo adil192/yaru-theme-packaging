@@ -1,13 +1,17 @@
+%global commit      1937b28e077e623ccdc48ce48bd24b5909919382
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global date        20191118
+
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:           yaru-theme
-Version:        19.10.3
-Release:        1%{?dist}
+Version:        19.10.4
+Release:        1.%{date}git%{shortcommit}%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
 License:        GPLv3+ and CC-BY-SA
 URL:            https://community.ubuntu.com/c/desktop/theme-refresh
-Source0:        https://github.com/ubuntu/yaru/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/ubuntu/yaru/archive/%{commit}/%{name}-%{version}.%{date}git%{shortcommit}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  meson >= 0.45
@@ -84,7 +88,7 @@ This package contains the sound theme following the XDG theming specification.
 
 
 %prep
-%autosetup -n yaru-%{version}
+%autosetup -n yaru-%{commit} -p1
 
 
 %build
@@ -116,34 +120,39 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %files -n gnome-shell-theme-yaru
 %license %{_license}
 %{_datadir}/gnome-shell/modes/yaru.json
-%{_datadir}/gnome-shell/theme/Yaru
+%{_datadir}/gnome-shell/theme/Yaru/
+%{_datadir}/themes/Yaru-dark/
+%{_datadir}/themes/Yaru/
 
 %files -n yaru-gtk2-theme
 %license %{_license}
-%{_datadir}/themes/Yaru-dark/gtk-2.0
-%{_datadir}/themes/Yaru-light/gtk-2.0
-%{_datadir}/themes/Yaru/gtk-2.0
+%{_datadir}/themes/Yaru-dark/gtk-2.0/
+%{_datadir}/themes/Yaru-light/gtk-2.0/
+%{_datadir}/themes/Yaru/gtk-2.0/
 
 %files -n yaru-gtk3-theme
 %license %{_license}
-%{_datadir}/themes/Yaru-dark/gtk-3.0
-%{_datadir}/themes/Yaru-dark/gtk-3.20
-%{_datadir}/themes/Yaru-light/gtk-3.0
-%{_datadir}/themes/Yaru-light/gtk-3.20
-%{_datadir}/themes/Yaru/gtk-3.0
-%{_datadir}/themes/Yaru/gtk-3.20
+%{_datadir}/themes/Yaru-dark/gtk-3.0/
+%{_datadir}/themes/Yaru-dark/gtk-3.20/
+%{_datadir}/themes/Yaru-light/gtk-3.0/
+%{_datadir}/themes/Yaru-light/gtk-3.20/
+%{_datadir}/themes/Yaru/gtk-3.0/
+%{_datadir}/themes/Yaru/gtk-3.20/
 
 %files -n yaru-icon-theme
 %license %{_license}
-%{_datadir}/icons/Yaru
+%{_datadir}/icons/Yaru/
 %ghost %{_datadir}/icons/Yaru/icon-theme.cache
 
 %files -n yaru-sound-theme
 %license %{_license}
-%{_datadir}/sounds/Yaru
+%{_datadir}/sounds/Yaru/
 
 
 %changelog
+* Thu Nov 21 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.4-1.20191118git1937b28
+- Update to latest git snapshot which contain broken gnome-shell theme fix
+
 * Fri Sep 27 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.3-1
 - Update to 19.10.3
 - Add new light variant
