@@ -1,17 +1,13 @@
-%global commit      1937b28e077e623ccdc48ce48bd24b5909919382
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global date        20191118
-
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:           yaru-theme
-Version:        19.10.4
-Release:        1.%{date}git%{shortcommit}%{?dist}
+Version:        19.10.5
+Release:        1%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
 License:        GPLv3+ and CC-BY-SA
 URL:            https://community.ubuntu.com/c/desktop/theme-refresh
-Source0:        https://github.com/ubuntu/yaru/archive/%{commit}/%{name}-%{version}.%{date}git%{shortcommit}.tar.gz
+Source0:        https://github.com/ubuntu/yaru/archive/%{version}/%{name}-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  meson >= 0.45
@@ -23,10 +19,10 @@ Requires:       yaru-gtk3-theme
 Requires:       yaru-icon-theme
 Requires:       yaru-sound-theme
 
-%global _description \
-Yaru theme is the default theme for Ubuntu, entirely backed by the community.\
-This is the theme that is shaped by the community on the Ubuntu hub, turned into\
-the default theme starting from Ubuntu 18.10 Cosmic Cuttlefish.
+%global _description %{expand:
+Yaru theme is the default theme for Ubuntu, entirely backed by the community.
+This is the theme that is shaped by the community on the Ubuntu hub, turned into
+the default theme starting from Ubuntu 18.10 Cosmic Cuttlefish.}
 
 %description %{_description}
 
@@ -88,7 +84,7 @@ This package contains the sound theme following the XDG theming specification.
 
 
 %prep
-%autosetup -n yaru-%{commit} -p1
+%autosetup -n yaru-%{version} -p1
 
 
 %build
@@ -150,6 +146,9 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 
 
 %changelog
+* Wed Jan 08 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.5-1
+- Update to 19.10.5
+
 * Thu Nov 21 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.4-1.20191118git1937b28
 - Update to latest git snapshot which contain broken gnome-shell theme fix
 
