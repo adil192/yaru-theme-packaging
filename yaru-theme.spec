@@ -2,7 +2,7 @@
 
 Name:           yaru-theme
 Version:        19.10.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
 License:        GPLv3+ and CC-BY-SA
@@ -146,6 +146,9 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 
 
 %changelog
+* Fri Jan 31 2020 Fedora Release Engineering <releng@fedoraproject.org> - 19.10.5-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Wed Jan 08 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.5-1
 - Update to 19.10.5
 
