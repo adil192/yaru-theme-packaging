@@ -1,8 +1,8 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:           yaru-theme
-Version:        19.10.5
-Release:        2%{?dist}
+Version:        20.04.1
+Release:        1%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
 License:        GPLv3+ and CC-BY-SA
@@ -95,9 +95,9 @@ This package contains the sound theme following the XDG theming specification.
 %install
 %meson_install
 
-rm  %{buildroot}%{_datadir}/glib-2.0/schemas/99_Yaru.gschema.override \
-    %{buildroot}%{_datadir}/xsessions/Yaru.desktop \
-    %{buildroot}%{_datadir}/wayland-sessions/Yaru-wayland.desktop \
+rm  %{buildroot}%{_datadir}/glib-2.0/schemas/99_Yaru.gschema.override               \
+    %{buildroot}%{_datadir}/xsessions/Yaru.desktop                                  \
+    %{buildroot}%{_datadir}/wayland-sessions/Yaru-wayland.desktop                   \
     %{buildroot}%{_datadir}/gnome-shell/extensions/ubuntu-dock@ubuntu.com/yaru.css
 
 touch %{buildroot}%{_datadir}/icons/Yaru/icon-theme.cache
@@ -146,6 +146,9 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 
 
 %changelog
+* Fri Feb 07 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.1-1
+- Update to 20.04.1
+
 * Fri Jan 31 2020 Fedora Release Engineering <releng@fedoraproject.org> - 19.10.5-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
