@@ -1,7 +1,7 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:           yaru-theme
-Version:        20.04.1
+Version:        20.04.4
 Release:        1%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
@@ -13,6 +13,7 @@ BuildArch:      noarch
 BuildRequires:  meson >= 0.45
 BuildRequires:  sassc
 BuildRequires:  pkgconfig(appstream-glib)
+
 Requires:       gnome-shell-theme-yaru
 Requires:       yaru-gtk2-theme
 Requires:       yaru-gtk3-theme
@@ -29,8 +30,10 @@ the default theme starting from Ubuntu 18.10 Cosmic Cuttlefish.}
 
 %package     -n gnome-shell-theme-yaru
 Summary:        Yaru GNOME Shell Theme
+
 Recommends:     yaru-gtk3-theme
 Recommends:     yaru-icon-theme
+
 Suggests:       yaru-sound-theme
 Suggests:       yaru-theme
 
@@ -41,8 +44,10 @@ This package contains GNOME Shell Theme.
 
 %package     -n yaru-gtk2-theme
 Summary:        GTK+ 2 support for the Yaru GTK Theme
+
 Requires:       adwaita-gtk2-theme
 Requires:       gtk-murrine-engine
+
 Recommends:     yaru-gtk3-theme
 
 %description -n yaru-gtk2-theme %{_description}
@@ -52,7 +57,9 @@ This package contains GTK+ 2 theme.
 
 %package     -n yaru-gtk3-theme
 Summary:        GTK+ 3 support for the Yaru GTK Theme
+
 Requires:       gtk3
+
 Recommends:     yaru-gtk2-theme
 
 %description -n yaru-gtk3-theme %{_description}
@@ -63,8 +70,10 @@ This package contains GTK+ 3 theme.
 %package     -n yaru-icon-theme
 Summary:        Yaru icon theme
 License:        CC-BY-SA
+
 Requires:       hicolor-icon-theme
 Requires:       humanity-icon-theme
+
 Suggests:       gnome-shell-theme-yaru
 Suggests:       yaru-gtk3-theme
 Suggests:       yaru-sound-theme
@@ -146,6 +155,9 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 
 
 %changelog
+* Tue Mar 24 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.4-1
+- Update to 20.04.4
+
 * Fri Feb 07 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.1-1
 - Update to 20.04.1
 
