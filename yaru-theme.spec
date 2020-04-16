@@ -1,7 +1,7 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:           yaru-theme
-Version:        20.04.4
+Version:        20.04.5
 Release:        1%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
@@ -125,6 +125,7 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %files -n gnome-shell-theme-yaru
 %license %{_license}
 %{_datadir}/gnome-shell/modes/yaru.json
+%{_datadir}/gnome-shell/theme/Yaru-dark/
 %{_datadir}/gnome-shell/theme/Yaru/
 %{_datadir}/themes/Yaru-dark/
 %{_datadir}/themes/Yaru/
@@ -155,6 +156,9 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 
 
 %changelog
+* Thu Apr 16 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.5-1
+- Update to 20.04.5
+
 * Tue Mar 24 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.4-1
 - Update to 20.04.4
 
