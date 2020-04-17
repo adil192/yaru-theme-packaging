@@ -1,7 +1,7 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:           yaru-theme
-Version:        20.04.5
+Version:        20.04.6
 Release:        1%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
@@ -156,6 +156,9 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 
 
 %changelog
+* Fri Apr 17 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.6-1
+- Update to 20.04.6
+
 * Thu Apr 16 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.5-1
 - Update to 20.04.5
 
