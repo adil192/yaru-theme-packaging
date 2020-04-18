@@ -2,7 +2,7 @@
 
 Name:           yaru-theme
 Version:        20.04.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
 License:        GPLv3+ and CC-BY-SA
@@ -19,6 +19,8 @@ Requires:       yaru-gtk2-theme
 Requires:       yaru-gtk3-theme
 Requires:       yaru-icon-theme
 Requires:       yaru-sound-theme
+
+Suggests:       yaru-unity-theme
 
 %global _description %{expand:
 Yaru theme is the default theme for Ubuntu, entirely backed by the community.
@@ -92,6 +94,15 @@ License:        CC-BY-SA
 This package contains the sound theme following the XDG theming specification.
 
 
+%package     -n yaru-unity-theme
+Summary:        Yaru Unity theme
+License:        CC-BY-SA
+
+%description -n yaru-unity-theme %{_description}
+
+This package contains the Unity theme.
+
+
 %prep
 %autosetup -n yaru-%{version} -p1
 
@@ -127,8 +138,8 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %{_datadir}/gnome-shell/modes/yaru.json
 %{_datadir}/gnome-shell/theme/Yaru-dark/
 %{_datadir}/gnome-shell/theme/Yaru/
-%{_datadir}/themes/Yaru-dark/
-%{_datadir}/themes/Yaru/
+%{_datadir}/themes/Yaru-dark/gnome-shell
+%{_datadir}/themes/Yaru/gnome-shell
 
 %files -n yaru-gtk2-theme
 %license %{_license}
@@ -154,8 +165,15 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %license %{_license}
 %{_datadir}/sounds/Yaru/
 
+%files -n yaru-unity-theme
+%license %{_license}
+%{_datadir}/themes/Yaru/unity
+
 
 %changelog
+* Sat Apr 18 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.6-2
+- Add new 'yaru-unity-theme' subpackage
+
 * Fri Apr 17 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.6-1
 - Update to 20.04.6
 
