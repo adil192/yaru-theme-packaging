@@ -2,7 +2,7 @@
 
 Name:           yaru-theme
 Version:        20.04.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
 License:        GPLv3+ and CC-BY-SA
@@ -126,12 +126,27 @@ touch %{buildroot}%{_datadir}/icons/Yaru/icon-theme.cache
 gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 
 
+# Workaround for replace directory with symlink which was added in Yaru
+# * https://docs.fedoraproject.org/en-US/packaging-guidelines/Directory_Replacement/#_scriptlet_to_replace_a_directory
+%pretrans -p <lua> -n gnome-shell-theme-yaru
+path = "%{_datadir}/themes/Yaru-dark/gnome-shell"
+st = posix.stat(path)
+if st and st.type == "directory" then
+  status = os.rename(path, path .. ".rpmmoved")
+  if not status then
+    suffix = 0
+    while not status do
+      suffix = suffix + 1
+      status = os.rename(path .. ".rpmmoved", path .. ".rpmmoved." .. suffix)
+    end
+    os.rename(path, path .. ".rpmmoved")
+  end
+end
+
+
 %files
 %license %{_license}
 %doc AUTHORS CONTRIBUTING.md README.md
-%{_datadir}/themes/Yaru-dark/index.theme
-%{_datadir}/themes/Yaru-light/index.theme
-%{_datadir}/themes/Yaru/index.theme
 
 %files -n gnome-shell-theme-yaru
 %license %{_license}
@@ -139,22 +154,32 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %{_datadir}/gnome-shell/theme/Yaru-dark/
 %{_datadir}/gnome-shell/theme/Yaru/
 %{_datadir}/themes/Yaru-dark/gnome-shell
+%{_datadir}/themes/Yaru-dark/index.theme
+%{_datadir}/themes/Yaru-light/index.theme
 %{_datadir}/themes/Yaru/gnome-shell
+%{_datadir}/themes/Yaru/index.theme
+%dir %{_datadir}/themes/Yaru
+%dir %{_datadir}/themes/Yaru-dark
+%dir %{_datadir}/themes/Yaru-light
+%ghost %{_datadir}/themes/Yaru-dark/gnome-shell.rpmmoved/
 
 %files -n yaru-gtk2-theme
 %license %{_license}
 %{_datadir}/themes/Yaru-dark/gtk-2.0/
 %{_datadir}/themes/Yaru-light/gtk-2.0/
 %{_datadir}/themes/Yaru/gtk-2.0/
+%dir %{_datadir}/themes/Yaru
+%dir %{_datadir}/themes/Yaru-dark
+%dir %{_datadir}/themes/Yaru-light
 
 %files -n yaru-gtk3-theme
 %license %{_license}
-%{_datadir}/themes/Yaru-dark/gtk-3.0/
-%{_datadir}/themes/Yaru-dark/gtk-3.20/
-%{_datadir}/themes/Yaru-light/gtk-3.0/
-%{_datadir}/themes/Yaru-light/gtk-3.20/
-%{_datadir}/themes/Yaru/gtk-3.0/
-%{_datadir}/themes/Yaru/gtk-3.20/
+%{_datadir}/themes/Yaru-dark/gtk-3.*/
+%{_datadir}/themes/Yaru-light/gtk-3.*/
+%{_datadir}/themes/Yaru/gtk-3.*/
+%dir %{_datadir}/themes/Yaru
+%dir %{_datadir}/themes/Yaru-dark
+%dir %{_datadir}/themes/Yaru-light
 
 %files -n yaru-icon-theme
 %license %{_license}
@@ -168,9 +193,13 @@ gtk-update-icon-cache --force %{_datadir}/icons/Yaru &>/dev/null || :
 %files -n yaru-unity-theme
 %license %{_license}
 %{_datadir}/themes/Yaru/unity
+%dir %{_datadir}/themes/Yaru
 
 
 %changelog
+* Tue Apr 21 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.6-3
+- Workaround for replace directory with symlink which was added in Yaru | Thanks for tip @zawertun
+
 * Sat Apr 18 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.6-2
 - Add new 'yaru-unity-theme' subpackage
 
