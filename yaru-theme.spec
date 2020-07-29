@@ -2,7 +2,7 @@
 
 Name:           yaru-theme
 Version:        20.04.6
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Ubuntu community theme "yaru"
 
 License:        GPLv3+ and CC-BY-SA
@@ -197,6 +197,9 @@ end
 
 
 %changelog
+* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 20.04.6-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Tue Apr 21 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.6-3
 - Workaround for replace directory with symlink which was added in Yaru | Thanks for tip @zawertun
 
