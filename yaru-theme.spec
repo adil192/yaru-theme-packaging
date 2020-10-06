@@ -1,7 +1,7 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:       yaru-theme
-Version:    20.10.4
+Version:    20.10.6
 Release:    1%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
@@ -181,6 +181,9 @@ end
 
 
 %changelog
+* Tue Oct  6 19:52:37 EEST 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.10.6-1
+- build(update): 20.10.6
+
 * Thu Sep 24 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.10.4-1
 - Update to 20.10.4
 
