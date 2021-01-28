@@ -2,7 +2,7 @@
 
 Name:       yaru-theme
 Version:    20.10.6.1
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
 
@@ -181,6 +181,9 @@ end
 
 
 %changelog
+* Thu Jan 28 2021 Fedora Release Engineering <releng@fedoraproject.org> - 20.10.6.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Sun Oct 11 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.10.6.1-1
 - build(update): 20.10.6.1
 
