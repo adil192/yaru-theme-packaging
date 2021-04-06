@@ -1,8 +1,8 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:       yaru-theme
-Version:    20.10.6.1
-Release:    2%{?dist}
+Version:    21.04.1
+Release:    1%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
 
@@ -15,8 +15,10 @@ BuildRequires: sassc
 BuildRequires: pkgconfig(appstream-glib)
 
 Requires:   gnome-shell-theme-yaru
+Requires:   gtksourceview
 Requires:   yaru-gtk2-theme
 Requires:   yaru-gtk3-theme
+Requires:   yaru-gtk4-theme
 Requires:   yaru-icon-theme
 Requires:   yaru-sound-theme
 
@@ -61,10 +63,24 @@ Summary:        GTK+ 3 support for the Yaru GTK Theme
 Requires:       gtk3
 
 Recommends:     yaru-gtk2-theme
+Recommends:     yaru-gtk4-theme
 
 %description -n yaru-gtk3-theme %{_description}
 
 This package contains GTK+ 3 theme.
+
+
+%package     -n yaru-gtk4-theme
+Summary:        GTK+ 3 support for the Yaru GTK Theme
+
+Requires:       gtk4
+
+Recommends:     yaru-gtk2-theme
+Recommends:     yaru-gtk3-theme
+
+%description -n yaru-gtk4-theme %{_description}
+
+This package contains GTK 4 theme.
 
 
 %package     -n yaru-icon-theme
@@ -90,6 +106,15 @@ License:        CC-BY-SA
 %description -n yaru-sound-theme %{_description}
 
 This package contains the sound theme following the XDG theming specification.
+
+
+%package     -n gtksourceview
+Summary:        Yaru GtkSourceView theme
+License:        CC-BY-SA
+
+%description -n gtksourceview %{_description}
+
+This package contains the GtkSourceView theme.
 
 
 %prep
@@ -136,15 +161,15 @@ end
 %files
 %license %{_license}
 %doc AUTHORS CONTRIBUTING.md README.md
+%{_datadir}/themes/Yaru*/metacity-1/
 
 %files -n gnome-shell-theme-yaru
 %license %{_license}
 %{_datadir}/gnome-shell/modes/yaru.json
-%{_datadir}/gnome-shell/theme/Yaru-dark/
+%{_datadir}/gnome-shell/theme/Yaru-light/
 %{_datadir}/gnome-shell/theme/Yaru/
-%{_datadir}/themes/Yaru-dark/gnome-shell
-%{_datadir}/themes/Yaru-dark/index.theme
-%{_datadir}/themes/Yaru-light/index.theme
+%{_datadir}/themes/Yaru-*/index.theme
+%{_datadir}/themes/Yaru-light/gnome-shell
 %{_datadir}/themes/Yaru/gnome-shell
 %{_datadir}/themes/Yaru/index.theme
 %dir %{_datadir}/themes/Yaru
@@ -154,8 +179,7 @@ end
 
 %files -n yaru-gtk2-theme
 %license %{_license}
-%{_datadir}/themes/Yaru-dark/gtk-2.0/
-%{_datadir}/themes/Yaru-light/gtk-2.0/
+%{_datadir}/themes/Yaru-*/gtk-2.0/
 %{_datadir}/themes/Yaru/gtk-2.0/
 %dir %{_datadir}/themes/Yaru
 %dir %{_datadir}/themes/Yaru-dark
@@ -163,9 +187,16 @@ end
 
 %files -n yaru-gtk3-theme
 %license %{_license}
-%{_datadir}/themes/Yaru-dark/gtk-3.*/
-%{_datadir}/themes/Yaru-light/gtk-3.*/
+%{_datadir}/themes/Yaru-*/gtk-3.*/
 %{_datadir}/themes/Yaru/gtk-3.*/
+%dir %{_datadir}/themes/Yaru
+%dir %{_datadir}/themes/Yaru-dark
+%dir %{_datadir}/themes/Yaru-light
+
+%files -n yaru-gtk4-theme
+%license %{_license}
+%{_datadir}/themes/Yaru-*/gtk-4.*/
+%{_datadir}/themes/Yaru/gtk-4.*/
 %dir %{_datadir}/themes/Yaru
 %dir %{_datadir}/themes/Yaru-dark
 %dir %{_datadir}/themes/Yaru-light
@@ -179,8 +210,15 @@ end
 %license %{_license}
 %{_datadir}/sounds/Yaru/
 
+%files -n gtksourceview
+%license %{_license}
+%{_datadir}/gtksourceview-*/styles/Yaru-*.xml
+
 
 %changelog
+* Tue Apr 06 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 21.04.1-1
+- build(update): 21.04.1
+
 * Thu Jan 28 2021 Fedora Release Engineering <releng@fedoraproject.org> - 20.10.6.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
