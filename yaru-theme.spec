@@ -2,7 +2,7 @@
 
 Name:       yaru-theme
 Version:    21.04.1
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
 
@@ -14,13 +14,13 @@ BuildRequires: meson >= 0.51
 BuildRequires: sassc
 BuildRequires: pkgconfig(appstream-glib)
 
-Requires:   gnome-shell-theme-yaru
-Requires:   gtksourceview
-Requires:   yaru-gtk2-theme
-Requires:   yaru-gtk3-theme
-Requires:   yaru-gtk4-theme
-Requires:   yaru-icon-theme
-Requires:   yaru-sound-theme
+Requires:   gnome-shell-theme-yaru = %{version}-%{release}
+Requires:   yaru-gtk2-theme = %{version}-%{release}
+Requires:   yaru-gtk3-theme = %{version}-%{release}
+Requires:   yaru-gtk4-theme = %{version}-%{release}
+Requires:   yaru-gtksourceview-theme = %{version}-%{release}
+Requires:   yaru-icon-theme = %{version}-%{release}
+Requires:   yaru-sound-theme = %{version}-%{release}
 
 %global _description %{expand:
 Yaru theme is the default theme for Ubuntu, entirely backed by the community.
@@ -108,11 +108,11 @@ License:        CC-BY-SA
 This package contains the sound theme following the XDG theming specification.
 
 
-%package     -n gtksourceview
+%package     -n yaru-gtksourceview-theme
 Summary:        Yaru GtkSourceView theme
 License:        CC-BY-SA
 
-%description -n gtksourceview %{_description}
+%description -n yaru-gtksourceview-theme %{_description}
 
 This package contains the GtkSourceView theme.
 
@@ -210,12 +210,15 @@ end
 %license %{_license}
 %{_datadir}/sounds/Yaru/
 
-%files -n gtksourceview
+%files -n yaru-gtksourceview-theme
 %license %{_license}
 %{_datadir}/gtksourceview-*/styles/Yaru-*.xml
 
 
 %changelog
+* Thu Apr 08 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 21.04.1-2
+- build: Fixes
+
 * Tue Apr 06 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 21.04.1-1
 - build(update): 21.04.1
 
