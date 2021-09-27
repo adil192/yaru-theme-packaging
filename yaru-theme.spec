@@ -1,8 +1,8 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:       yaru-theme
-Version:    21.04.1
-Release:    3%{?dist}
+Version:    21.10.2
+Release:    1%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
 
@@ -130,8 +130,8 @@ This package contains the GtkSourceView theme.
 %meson_install
 
 rm  %{buildroot}%{_datadir}/glib-2.0/schemas/99_Yaru.gschema.override \
-    %{buildroot}%{_datadir}/xsessions/Yaru.desktop \
-    %{buildroot}%{_datadir}/wayland-sessions/Yaru-wayland.desktop \
+    %{buildroot}%{_datadir}/xsessions/Yaru-xorg.desktop \
+    %{buildroot}%{_datadir}/wayland-sessions/Yaru.desktop \
     %{buildroot}%{_datadir}/gnome-shell/extensions/ubuntu-dock@ubuntu.com/yaru.css
 
 touch %{buildroot}%{_datadir}/icons/Yaru/icon-theme.cache
@@ -212,10 +212,13 @@ end
 
 %files -n yaru-gtksourceview-theme
 %license %{_license}
-%{_datadir}/gtksourceview-*/styles/Yaru-*.xml
+%{_datadir}/gtksourceview-*/styles/Yaru*.xml
 
 
 %changelog
+* Mon Sep 27 2021 Frantisek Zatloukal <fzatlouk@redhat.com> - 21.10.2-1
+- build(update): 21.10.2
+
 * Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 21.04.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
