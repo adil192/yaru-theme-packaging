@@ -2,7 +2,7 @@
 
 Name:       yaru-theme
 Version:    21.10.2
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
 
@@ -216,6 +216,9 @@ end
 
 
 %changelog
+* Sat Jan 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 21.10.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
 * Mon Sep 27 2021 Frantisek Zatloukal <fzatlouk@redhat.com> - 21.10.2-1
 - build(update): 21.10.2
 
