@@ -1,8 +1,8 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:       yaru-theme
-Version:    21.10.2
-Release:    2%{?dist}
+Version:    22.04.1
+Release:    1%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
 
@@ -216,6 +216,9 @@ end
 
 
 %changelog
+* Fri Feb 25 2022 Artem Polishchuk <ego.cordatus@gmail.com> - 22.04.1-1
+- chore(update): 22.04.1
+
 * Sat Jan 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 21.10.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
