@@ -2,7 +2,7 @@
 
 Name:       yaru-theme
 Version:    22.04.4
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
 
@@ -32,6 +32,8 @@ the default theme starting from Ubuntu 18.10 Cosmic Cuttlefish.}
 
 %package     -n gnome-shell-theme-yaru
 Summary:        Yaru GNOME Shell Theme
+
+Requires:       gnome-shell-extension-user-theme
 
 Recommends:     yaru-gtk3-theme
 Recommends:     yaru-icon-theme
@@ -247,6 +249,9 @@ end
 
 
 %changelog
+* Mon Apr 25 2022 Artem Polishchuk <ego.cordatus@gmail.com> - 22.04.4-2
+- build: Add Requires gnome-shell-extension-user-theme
+
 * Mon Apr 25 2022 Artem Polishchuk <ego.cordatus@gmail.com> - 22.04.4-1
 - chore(update): 22.04.4
 
