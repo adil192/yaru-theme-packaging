@@ -1,7 +1,7 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:       yaru-theme
-Version:    22.04.1
+Version:    22.04.4
 Release:    1%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
@@ -166,15 +166,49 @@ end
 %files -n gnome-shell-theme-yaru
 %license %{_license}
 %{_datadir}/gnome-shell/modes/yaru.json
-%{_datadir}/gnome-shell/theme/Yaru-light/
-%{_datadir}/gnome-shell/theme/Yaru/
+%{_datadir}/gnome-shell/theme/Yaru*/
 %{_datadir}/themes/Yaru-*/index.theme
-%{_datadir}/themes/Yaru-light/gnome-shell
+%{_datadir}/themes/Yaru-bark-dark/gnome-shell
+%{_datadir}/themes/Yaru-bark/gnome-shell
+%{_datadir}/themes/Yaru-blue-dark/gnome-shell
+%{_datadir}/themes/Yaru-blue/gnome-shell
+%{_datadir}/themes/Yaru-dark/gnome-shell
+%{_datadir}/themes/Yaru-magenta-dark/gnome-shell
+%{_datadir}/themes/Yaru-magenta/gnome-shell
+%{_datadir}/themes/Yaru-olive-dark/gnome-shell
+%{_datadir}/themes/Yaru-olive/gnome-shell
+%{_datadir}/themes/Yaru-prussiangreen-dark/gnome-shell
+%{_datadir}/themes/Yaru-prussiangreen/gnome-shell
+%{_datadir}/themes/Yaru-purple-dark/gnome-shell
+%{_datadir}/themes/Yaru-purple/gnome-shell
+%{_datadir}/themes/Yaru-red-dark/gnome-shell
+%{_datadir}/themes/Yaru-red/gnome-shell
+%{_datadir}/themes/Yaru-sage-dark/gnome-shell
+%{_datadir}/themes/Yaru-sage/gnome-shell
+%{_datadir}/themes/Yaru-viridian-dark/gnome-shell
+%{_datadir}/themes/Yaru-viridian/gnome-shell
 %{_datadir}/themes/Yaru/gnome-shell
 %{_datadir}/themes/Yaru/index.theme
 %dir %{_datadir}/themes/Yaru
+%dir %{_datadir}/themes/Yaru-bark-dark
+%dir %{_datadir}/themes/Yaru-bark
+%dir %{_datadir}/themes/Yaru-blue-dark
+%dir %{_datadir}/themes/Yaru-blue
 %dir %{_datadir}/themes/Yaru-dark
-%dir %{_datadir}/themes/Yaru-light
+%dir %{_datadir}/themes/Yaru-magenta-dark
+%dir %{_datadir}/themes/Yaru-magenta
+%dir %{_datadir}/themes/Yaru-olive-dark
+%dir %{_datadir}/themes/Yaru-olive
+%dir %{_datadir}/themes/Yaru-prussiangreen-dark
+%dir %{_datadir}/themes/Yaru-prussiangreen
+%dir %{_datadir}/themes/Yaru-purple-dark
+%dir %{_datadir}/themes/Yaru-purple
+%dir %{_datadir}/themes/Yaru-red-dark
+%dir %{_datadir}/themes/Yaru-red
+%dir %{_datadir}/themes/Yaru-sage-dark
+%dir %{_datadir}/themes/Yaru-sage
+%dir %{_datadir}/themes/Yaru-viridian-dark
+%dir %{_datadir}/themes/Yaru-viridian
 %ghost %{_datadir}/themes/Yaru-dark/gnome-shell.rpmmoved/
 
 %files -n yaru-gtk2-theme
@@ -183,7 +217,6 @@ end
 %{_datadir}/themes/Yaru/gtk-2.0/
 %dir %{_datadir}/themes/Yaru
 %dir %{_datadir}/themes/Yaru-dark
-%dir %{_datadir}/themes/Yaru-light
 
 %files -n yaru-gtk3-theme
 %license %{_license}
@@ -191,7 +224,6 @@ end
 %{_datadir}/themes/Yaru/gtk-3.*/
 %dir %{_datadir}/themes/Yaru
 %dir %{_datadir}/themes/Yaru-dark
-%dir %{_datadir}/themes/Yaru-light
 
 %files -n yaru-gtk4-theme
 %license %{_license}
@@ -199,11 +231,10 @@ end
 %{_datadir}/themes/Yaru/gtk-4.*/
 %dir %{_datadir}/themes/Yaru
 %dir %{_datadir}/themes/Yaru-dark
-%dir %{_datadir}/themes/Yaru-light
 
 %files -n yaru-icon-theme
 %license %{_license}
-%{_datadir}/icons/Yaru/
+%{_datadir}/icons/Yaru*/
 %ghost %{_datadir}/icons/Yaru/icon-theme.cache
 
 %files -n yaru-sound-theme
@@ -216,6 +247,9 @@ end
 
 
 %changelog
+* Mon Apr 25 2022 Artem Polishchuk <ego.cordatus@gmail.com> - 22.04.4-1
+- chore(update): 22.04.4
+
 * Fri Feb 25 2022 Artem Polishchuk <ego.cordatus@gmail.com> - 22.04.1-1
 - chore(update): 22.04.1
 
