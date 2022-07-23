@@ -2,7 +2,7 @@
 
 Name:       yaru-theme
 Version:    22.04.4
-Release:    2%{?dist}
+Release:    3%{?dist}
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
 
@@ -249,6 +249,9 @@ end
 
 
 %changelog
+* Sat Jul 23 2022 Fedora Release Engineering <releng@fedoraproject.org> - 22.04.4-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
 * Mon Apr 25 2022 Artem Polishchuk <ego.cordatus@gmail.com> - 22.04.4-2
 - build: Add Requires gnome-shell-extension-user-theme
 
