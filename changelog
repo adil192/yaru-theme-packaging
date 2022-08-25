@@ -1,0 +1,92 @@
+* Sat Jul 23 2022 Fedora Release Engineering <releng@fedoraproject.org> - 22.04.4-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
+* Mon Apr 25 2022 Artem Polishchuk <ego.cordatus@gmail.com> - 22.04.4-2
+- build: Add Requires gnome-shell-extension-user-theme
+
+* Mon Apr 25 2022 Artem Polishchuk <ego.cordatus@gmail.com> - 22.04.4-1
+- chore(update): 22.04.4
+
+* Fri Feb 25 2022 Artem Polishchuk <ego.cordatus@gmail.com> - 22.04.1-1
+- chore(update): 22.04.1
+
+* Sat Jan 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 21.10.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
+* Mon Sep 27 2021 Frantisek Zatloukal <fzatlouk@redhat.com> - 21.10.2-1
+- build(update): 21.10.2
+
+* Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 21.04.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
+* Thu Apr 08 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 21.04.1-2
+- build: Fixes
+
+* Tue Apr 06 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 21.04.1-1
+- build(update): 21.04.1
+
+* Thu Jan 28 2021 Fedora Release Engineering <releng@fedoraproject.org> - 20.10.6.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
+* Sun Oct 11 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.10.6.1-1
+- build(update): 20.10.6.1
+
+* Tue Oct  6 19:52:37 EEST 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.10.6-1
+- build(update): 20.10.6
+
+* Thu Sep 24 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.10.4-1
+- Update to 20.10.4
+
+* Fri Sep 11 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.10.3-1
+- Update to 20.10.3
+- Don't build yaru-unity-theme
+
+* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 20.04.6-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
+* Tue Apr 21 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.6-3
+- Workaround for replace directory with symlink which was added in Yaru | Thanks for tip @zawertun
+
+* Sat Apr 18 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.6-2
+- Add new 'yaru-unity-theme' subpackage
+
+* Fri Apr 17 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.6-1
+- Update to 20.04.6
+
+* Thu Apr 16 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.5-1
+- Update to 20.04.5
+
+* Tue Mar 24 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.4-1
+- Update to 20.04.4
+
+* Fri Feb 07 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 20.04.1-1
+- Update to 20.04.1
+
+* Fri Jan 31 2020 Fedora Release Engineering <releng@fedoraproject.org> - 19.10.5-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
+* Wed Jan 08 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.5-1
+- Update to 19.10.5
+
+* Thu Nov 21 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.4-1.20191118git1937b28
+- Update to latest git snapshot which contain broken gnome-shell theme fix
+
+* Fri Sep 27 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.3-1
+- Update to 19.10.3
+- Add new light variant
+- Drop fdupes
+
+* Tue Sep 10 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.10.1-2
+- Update to 19.10.1
+
+* Sat Jul 27 2019 Fedora Release Engineering <releng@fedoraproject.org> - 19.04.1-3.20190425git0ddb244
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
+* Fri Apr 26 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 19.04.1-2.20190425git0ddb244
+- Adapt for Fedora
+
+* Fri Jan 18 10:30:30 UTC 2019 - dead_mozay@opensuse.org
+- Update to version 19.04+20190117.f36189f4
+
+* Wed Jan 02 11:51:35 UTC 2019 - dead_mozay@opensuse.org
+- Update to version 18.10.7+20190101.1db0abb5
