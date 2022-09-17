@@ -23,9 +23,16 @@ Requires:   yaru-icon-theme = %{version}-%{release}
 Requires:   yaru-sound-theme = %{version}-%{release}
 
 %global _description %{expand:
-Yaru theme is the default theme for Ubuntu, entirely backed by the community.
-This is the theme that is shaped by the community on the Ubuntu hub, turned into
-the default theme starting from Ubuntu 18.10 Cosmic Cuttlefish.}
+Yaru is the default theme for Ubuntu, backed by the community.
+
+It contains:
+  * a GNOME Shell theme based on the upstream GNOME shell theme
+  * a light and dark GTK theme (gtk2 and gtk3) based on the upstream Adwaita
+    Gtk theme
+  * an icon & cursor theme, derived from the Unity8 Suru icons and Suru icon
+    theme
+  * a sound theme, combining sounds from the WoodenBeaver and Touch-Remix
+    sound themes.}
 
 %description %{_description}
 
@@ -120,7 +127,7 @@ This package contains the GtkSourceView theme.
 
 
 %prep
-%autosetup -n yaru-%{version} -p1
+%autosetup -n yaru-%{version}
 
 
 %build
