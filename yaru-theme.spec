@@ -1,9 +1,9 @@
 %global forgeurl https://github.com/ubuntu/yaru
-%global tag %{version}-0ubuntu2
+%global tag %{version}
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:       yaru-theme
-Version:    23.10.0
+Version:    24.04.0
 %forgemeta
 Release:    %autorelease
 Summary:    Ubuntu community theme "yaru"
@@ -255,6 +255,7 @@ end
 %files -n yaru-gtksourceview-theme
 %license %{_license}
 %{_datadir}/gtksourceview-*/styles/Yaru*.xml
+%{_datadir}/libgedit-gtksourceview-300/styles/Yaru*.xml
 
 
 %changelog
