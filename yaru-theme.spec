@@ -9,7 +9,7 @@ Release:    %autorelease
 Summary:    Ubuntu community theme "yaru"
 BuildArch:  noarch
 
-License:    GPLv3+ and CC-BY-SA
+License:    GPL-3.0-or-later and CC-BY-SA-4.0
 URL:        https://community.ubuntu.com/c/desktop/theme-refresh
 Source0:    %{forgesource}
 
