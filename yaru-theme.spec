@@ -1,9 +1,9 @@
 %global forgeurl https://github.com/ubuntu/yaru
-%global tag %{version}-0ubuntu1
+%global tag %{version}ubuntu
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:       yaru-theme
-Version:    25.10.3
+Version:    26.10.1
 %forgemeta
 Release:    %autorelease
 Summary:    All Ubuntu Yaru GNOME themes
@@ -125,11 +125,6 @@ This package contains the GtkSourceView theme.
 
 %install
 %meson_install
-# Remove GTK 2 theme
-# https://github.com/ubuntu/yaru/issues/4356
-rm -rf %{buildroot}%{_datadir}/themes/Yaru-*/gtk-2.0/
-rm -rf %{buildroot}%{_datadir}/themes/Yaru/gtk-2.0/
-
 rm  %{buildroot}%{_datadir}/glib-2.0/schemas/99_Yaru.gschema.override \
     %{buildroot}%{_datadir}/xsessions/Yaru-xorg.desktop \
     %{buildroot}%{_datadir}/wayland-sessions/Yaru.desktop \
