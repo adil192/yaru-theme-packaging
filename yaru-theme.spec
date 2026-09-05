@@ -3,7 +3,7 @@
 %global _license COPYING COPYING.LGPL-2.1 COPYING.LGPL-3.0 LICENSE_CCBYSA
 
 Name:       yaru-theme
-Version:    26.10.1
+Version:    26.10.2
 %forgemeta
 Release:    %autorelease
 Summary:    All Ubuntu Yaru GNOME themes
@@ -126,7 +126,6 @@ This package contains the GtkSourceView theme.
 %install
 %meson_install
 rm  %{buildroot}%{_datadir}/glib-2.0/schemas/99_Yaru.gschema.override \
-    %{buildroot}%{_datadir}/xsessions/Yaru-xorg.desktop \
     %{buildroot}%{_datadir}/wayland-sessions/Yaru.desktop \
     %{buildroot}%{_datadir}/gnome-shell/extensions/ubuntu-dock@ubuntu.com/yaru.css
 
