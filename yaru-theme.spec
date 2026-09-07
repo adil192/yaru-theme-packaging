@@ -5,13 +5,14 @@
 Name:       yaru-theme
 Version:    26.10.2
 %forgemeta
-Release:    %autorelease
+Release:    2%{?dist}
 Summary:    All Ubuntu Yaru GNOME themes
 BuildArch:  noarch
 
 License:    GPL-3.0-or-later AND CC-BY-SA-4.0
 URL:        https://community.ubuntu.com/c/desktop/theme-refresh
 Source0:    %{forgesource}
+Patch0:     inherit-breeze.patch
 
 BuildRequires: meson
 BuildRequires: sassc

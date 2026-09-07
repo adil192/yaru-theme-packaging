@@ -1,0 +1,15 @@
+diff --git a/icons/meson.build b/icons/meson.build
+index d240199fe..14d3a0ba9 100644
+--- a/icons/meson.build
++++ b/icons/meson.build
+@@ -383,7 +383,9 @@ foreach flavour: icon_flavors
+       )
+     endif
+ 
+-    generate_index_theme_args = []
++    generate_index_theme_args = [
++      '--inherits', 'breeze',
++    ]
+     foreach ef: excluded_folders
+       generate_index_theme_args += ['--exclude-directory', ef]
+     endforeach
